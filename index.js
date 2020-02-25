@@ -1,9 +1,21 @@
 const http = require('http');
 const server = http.createServer((req,res)=>{
-//request is an event listenener whihc is registereg so event loop keeps always running 
-console.log(req);
-// to break the event looop in node js we use 
-//process.exit();
+
+const url = req.url;
+if(url == '/'){
+  res.write('<html>');
+    res.write('<head> <title> Node app</title></head>');
+      res.write('<body> ');
+        res.write('<h1> New app</h1>');
+res.setHeader('Content-type','text/html');
+console.log(res);
+
+ res.end();
+
+}
+
+
+ 
 });
 
-server.listen(3030);
+// server.listen(3030); // obsolete in repl 
