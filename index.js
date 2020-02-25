@@ -1,11 +1,9 @@
-const express = require('express');
-
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Hello Express app!')
+const http = require('http');
+const server = http.createServer((req,res)=>{
+//request is an event listenener whihc is registereg so event loop keeps always running 
+console.log(req);
+// to break the event looop in node js we use 
+//process.exit();
 });
 
-app.listen(3000, () => {
-  console.log('server started');
-});
+server.listen(3030);
